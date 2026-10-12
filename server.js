@@ -102,7 +102,7 @@ app.put('/tasks/:id', async (req, res) => {
 });
 
 // DELETE (ลบงาน)
-app.delete('/tasks/:id', verifyToken, async (req, res) => {
+app.delete('/tasks/:id', async (req, res) => {
     try {
         // คำสั่งเดียวจบ: ค้นหาด้วย _id แล้วลบทิ้งทันที
         const deletedTask = await Task.findByIdAndDelete(req.params.id);
